@@ -1,0 +1,8 @@
+GUS_NUTS:
+plik łączący kody GUS z kodami NUTS
+
+wspolczynnik_dzietnosci:
+Współczynnik dzietności oznacza liczbę dzieci, które urodziłaby przeciętnie kobieta w ciągu całego okresu rozrodczego (15 - 49 lat) przy założeniu, że w poszczególnych fazach tego okresu rodziłaby z intensywnością obserwowaną w badanym roku, tzn. przy przyjęciu cząstkowych współczynników płodności z tego okresu za niezmienne; Współczynnik reprodukcji brutto przedstawia liczbę córek urodzonych przeciętnie przez kobietę przy założeniu, że kobieta w wieku rozrodczym będzie rodzić z częstością, jaką charakteryzują się wszystkie kobiety rodzące w roku, dla którego oblicza się współczynnik reprodukcji (niezmienne współczynniki płodności). Wskaźniki odnoszące się do liczby i struktury ludności (płeć, grupy wieku) od 2010 roku zostały przeliczone zgodnie z bilansem przygotowanym w oparciu o wyniki NSP 2011. Źródłem informacji o urodzeniach i zgonach jest dla GUS sprawozdawczość urzędów stanu cywilnego.
+
+
+
