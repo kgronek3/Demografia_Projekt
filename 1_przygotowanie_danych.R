@@ -508,25 +508,24 @@ POL <- get_eurostat_geospatial(output_class = "sf",
 
 
 #### Łączenie danych do pliku shapefile ####
-POL <- left_join(POL,TFR_P, by = "NUTS_ID") %>%
-	left_join(bezrobotni_wg_wieku_i_plci_P, by = "NUTS_ID") %>%
-	left_join(cena_mieszkan_metr_mediana_P, by = "NUTS_ID") %>%
-	left_join(cena_mieszkan_metr_srednia_P, by = "NUTS_ID") %>%
-	left_join(ludnosc_ogolem_ogolem_P, by = "NUTS_ID") %>%
-	left_join(ludnosc_ogolem_rozrodczy_P, by = "NUTS_ID") %>%
-	left_join(ludnosc_kobiety_ogolem_P, by = "NUTS_ID") %>%
-	left_join(ludnosc_kobiety_rozrodczy_P, by = "NUTS_ID") %>%
-	left_join(ludnosc_mezczyzni_ogolem_P, by = "NUTS_ID") %>%
-	left_join(ludnosc_mezczyzni_rozrodczy_P, by = "NUTS_ID") %>%
-	left_join(mieszkania_uzytkowe_P, by = "NUTS_ID") %>%
-	left_join(rozwody_i_separacje_P, by = "NUTS_ID") %>%
-	left_join(swiadczenia_500_plus_P, by = "NUTS_ID") %>%
-	left_join(swiadczenia_spoleczne_P, by = "NUTS_ID") %>%
-	left_join(wspolczynnik_feminizacji_P, by = "NUTS_ID") %>%
-	left_join(wynagrodzenia_P, by = "NUTS_ID") %>%
-	left_join(zlobki_P, by = "NUTS_ID") %>%
-	
 
+GUS_NUTS <- GUS_NUTS %>% rename(NUTS_ID = Kod_NUTS)
 
-POL
-
+POL <- left_join(POL,GUS_NUTS, by = "NUTS_ID") %>%
+    left_join(TFR_P[,-c(2,3)], by = "NUTS_ID") %>%
+	left_join(bezrobotni_wg_wieku_i_plci_P[,-c(2,3)], by = "NUTS_ID") %>%
+	left_join(cena_mieszkan_metr_mediana_P[,-c(2,3)], by = "NUTS_ID") %>%
+	left_join(cena_mieszkan_metr_srednia_P[,-c(2,3)], by = "NUTS_ID") %>%
+	left_join(ludnosc_ogolem_ogolem_P[,-c(2,3)], by = "NUTS_ID") %>%
+	left_join(ludnosc_ogolem_rozrodczy_P[,-c(2,3)], by = "NUTS_ID") %>%
+	left_join(ludnosc_kobiety_ogolem_P[,-c(2,3)], by = "NUTS_ID") %>%
+	left_join(ludnosc_kobiety_rozrodczy_P[,-c(2,3)], by = "NUTS_ID") %>%
+	left_join(ludnosc_mezczyzni_ogolem_P[,-c(2,3)], by = "NUTS_ID") %>%
+	left_join(ludnosc_mezczyzni_rozrodczy_P[,-c(2,3)], by = "NUTS_ID") %>%
+	left_join(mieszkania_uzytkowe_P[,-c(2,3)], by = "NUTS_ID") %>%
+	left_join(rozwody_i_separacje_P[,-c(2,3)], by = "NUTS_ID") %>%
+	left_join(swiadczenia_500_plus_P[,-c(2,3)], by = "NUTS_ID") %>%
+	left_join(swiadczenia_spoleczne_P[,-c(2,3)], by = "NUTS_ID") %>%
+	left_join(wspolczynnik_feminizacji_P[,-c(2,3)], by = "NUTS_ID") %>%
+	left_join(wynagrodzenia_P[,-c(2,3)], by = "NUTS_ID") %>%
+	left_join(zlobki_P[,-c(2,3)], by = "NUTS_ID")
