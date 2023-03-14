@@ -139,7 +139,7 @@ Lata
 2002-2022
 ====== mieszkania oddane do użytkowania na 1000 ludności
 ====== przeciętna powierzchnia użytkowa 1 mieszkania oddanego do użytkowania
-====== przeciętna liczba izb w 1 mieskzaniu oddanym do użytkowania
+====== przeciętna liczba izb w 1 mieszkaniu oddanym do użytkowania
 ====== nowe budynki mieszkalne na 1000 ludności
 Wskaźniki odnoszące się do liczby i struktury ludności (płeć, grupy wieku) od 2010 roku zostały przeliczone zgodnie z bilansem przygotowanym w oparciu o wyniki NSP 2011. Wskaźniki odnoszące się do liczby i struktury ludności (płeć, grupy wieku) od 2020 roku zostały przeliczone zgodnie z bilansem przygotowanym w oparciu o wyniki NSP 2021.
 
