@@ -42,7 +42,6 @@ TFR_P <- read.csv("./data/wspolczynnik_dzietnosci//LUDN_2346_CREL_20230311183211
 	pivot_wider(id_cols = c(NUTS_ID, Kod_GUS, Nazwa), names_from = c(zmienna, Rok),
 				values_from = Wartosc) 
 
-TFR_P
 
 # bezrobotni_wg_wieku_i_plci
 bezrobotni_wg_wieku_i_plci <- read.csv("./data/bezrobotni_wg_wieku_i_plci/RYNE_1946_CREL_20230312143348.csv",
@@ -256,7 +255,7 @@ malzenstwa_zawarte <- read.csv("./data/malzenstwa_zawarte/LUDN_3430_CREL_2023031
 	relocate(NUTS_ID) %>% 
 	filter(Rok != 2022) %>% 
 	pivot_wider(id_cols = c(NUTS_ID, Kod_GUS, Nazwa, Rok), names_from = c(zmienna),
-				values_from = Wartosc) %>% 
+				values_from = Wartosc)
 
 malzenstwa_zawarte_P <- read.csv("./data/malzenstwa_zawarte/LUDN_3430_CREL_20230312142004.csv",
 							   sep = ";", dec = ",", header = T, fill = TRUE,
@@ -379,6 +378,9 @@ swiadczenia_500_plus_P <- read.csv("./data/swiadczenia_500_plus/OCHR_3803_CREL_2
 	pivot_wider(id_cols = c(NUTS_ID, Kod_GUS, Nazwa), names_from = c(zmienna, Rok),
 				values_from = Wartosc)
 
+
+swiadczenia_500_plus
+
 # swiadczenia_spoleczne
 swiadczenia_spoleczne <- read.csv("./data/swiadczenia_spoleczne/OCHR_2993_CREL_20230312173337.csv",
 								 sep = ";", dec = ",", header = T, fill = TRUE,
@@ -482,6 +484,7 @@ zlobki <- read.csv("./data/zlobki/OCHR_3227_CREL_20230312181227.csv",
 	relocate(NUTS_ID) %>% 
 	pivot_wider(id_cols = c(NUTS_ID, Kod_GUS, Nazwa, Rok), names_from = c(zmienna),
 				values_from = Wartosc)
+
 zlobki_P <- read.csv("./data/zlobki/OCHR_3227_CREL_20230312181227.csv",
 				   sep = ";", dec = ",", header = T, fill = TRUE,
 				   colClasses = c("character","character","character",
@@ -505,5 +508,25 @@ POL <- get_eurostat_geospatial(output_class = "sf",
 
 
 #### Łączenie danych do pliku shapefile ####
-POL <- left_join(POL,TFR_P, by = "NUTS_ID")
+POL <- left_join(POL,TFR_P, by = "NUTS_ID") %>%
+	left_join(bezrobotni_wg_wieku_i_plci_P, by = "NUTS_ID") %>%
+	left_join(cena_mieszkan_metr_mediana_P, by = "NUTS_ID") %>%
+	left_join(cena_mieszkan_metr_srednia_P, by = "NUTS_ID") %>%
+	left_join(ludnosc_ogolem_ogolem_P, by = "NUTS_ID") %>%
+	left_join(ludnosc_ogolem_rozrodczy_P, by = "NUTS_ID") %>%
+	left_join(ludnosc_kobiety_ogolem_P, by = "NUTS_ID") %>%
+	left_join(ludnosc_kobiety_rozrodczy_P, by = "NUTS_ID") %>%
+	left_join(ludnosc_mezczyzni_ogolem_P, by = "NUTS_ID") %>%
+	left_join(ludnosc_mezczyzni_rozrodczy_P, by = "NUTS_ID") %>%
+	left_join(mieszkania_uzytkowe_P, by = "NUTS_ID") %>%
+	left_join(rozwody_i_separacje_P, by = "NUTS_ID") %>%
+	left_join(swiadczenia_500_plus_P, by = "NUTS_ID") %>%
+	left_join(swiadczenia_spoleczne_P, by = "NUTS_ID") %>%
+	left_join(wspolczynnik_feminizacji_P, by = "NUTS_ID") %>%
+	left_join(wynagrodzenia_P, by = "NUTS_ID") %>%
+	left_join(zlobki_P, by = "NUTS_ID") %>%
+	
+
+
+POL
 
